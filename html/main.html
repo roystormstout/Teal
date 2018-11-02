@@ -5,6 +5,7 @@
     <title>Main - </title>
     <link href="../css/main.css" rel="stylesheet"/>
     <link href="../css/bootstrap.min.css" rel="stylesheet"/>
+    <script src="../js/jquery-3.3.1.min.js"></script>
 </head>
 <body>
 <div class="container">
@@ -19,27 +20,37 @@
             <ul  class="list-group">
                 <li class="list-group-item row">
                     <div class="d-flex w-100 justify-content-around">
-                        <button>Ongoing</button>
-                        <button disabled="true">Completed</button>
+                        <button id="ongoing">Ongoing</button>
+                        <button id="completed">Completed</button>
                     </div>
                 </li>
-                <li class="list-group-item row">
+                <li class="list-group-item row ongoing task">
                     <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">Item</h5>
-                        <small>3 hrs</small>
-                        <button> complete </button>
+                        <h5 class="mb-1">Exercise</h5>
+                        <small>2 hrs</small>
+                        <button class="ongoing finishbtn"> complete </button>
+                        <button class="completed finishbtn"> undo </button>
                     </div>
                 </li>
-                <li class="list-group-item row">
+                <li class="list-group-item row ongoing task">
                     <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">Item</h5>
+                        <h5 class="mb-1">Meet with Dr.Dow</h5>
                         <small>1 hr</small>
-                        <button> complete </button>
+                        <button class="ongoing finishbtn"> complete </button>
+                        <button class="completed finishbtn"> undo </button>
                     </div>
                 </li>
-                <li class="list-group-item row">
+                <li class="list-group-item row completed task">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Meditation</h5>
+                        <small>2 hrs</small>
+                        <button class="ongoing finishbtn"> complete </button>
+                        <button class="completed finishbtn"> undo </button>
+                    </div>
+                </li>
+                <li class="list-group-item ongoing row">
                     <div class="d-flex w-100 justify-content-around">
-                        <button style="width:100%;font-size: large;">+</button>
+                        <button style="width:100%;font-size: large;" onclick="window.location.href='/Teal/html/addTask.html'">+</button>
                     </div>
                 </li>
             </ul>
@@ -70,5 +81,6 @@
 
     </div>
 </div>
+<script src="../js/main.js"></script>
 </body>
 </html>
