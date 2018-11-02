@@ -20,6 +20,9 @@ function sendText(event) {
 
     child.text(textMsg);
     node.append(child);
+    var secondChild = $('<img>');
+    secondChild.attr('src', "../resource/allen_profile.jpg").attr('height',32).attr('width',32).attr('alt',"user");
+    node.append(secondChild);
     $('#msg').val("");
     $('#chatBox').append(node);
 }
