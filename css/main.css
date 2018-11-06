@@ -1,3 +1,25 @@
-.main div div {
-    margin-left: 50px;
+
+.upcoming {
+    background: linear-gradient(to top left, #56bac8, #9bdee6);
+    color: white;
+
+}
+#main {
+    font-family: 'Poppins', sans-serif;
+    background: #f6f8fa;
+    min-height: 100vh;
+}
+
+.same_back {
+    background: #f6f8fa;
+    color: #000;
+}
+
+.inactive_btn {
+    color: #848484;
+}
+
+.add_btn {
+    color: #56bac8;
+    background: white;
 }

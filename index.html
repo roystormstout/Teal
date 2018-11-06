@@ -5,68 +5,78 @@
     <title>Main - </title>
     <link href="css/main.css" rel="stylesheet"/>
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/animate.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
     <script src="js/jquery-3.3.1.min.js"></script>
 </head>
 <body>
 
-<div class="container">
+<div id="main">
 
-<div class="header row"><div class="col-sm-6"><h1>Teal</h1></div>
-    <div class="col-sm-6 " style="text-align: right"> Hi, Allen!
-        <button><a href="html/profile.html"><img alt="Smiley face" height="64" width="64" src="resource/allen_profile.jpg"/></a></button>
+<header class="animated fadeInDown bg-white py-2 flex-nowrap justify-content-between align-items-center row">
+    <div class="col-sm-5" style="margin-left: 3vw"><h2 style="color:#56bac8; font-weight: bolder;">Teal</h2></div>
+    <div class="col-sm-5 " style="text-align: right;margin-right: 3vw;">
+        <span>Hi, Allen!</span>
+        <a class="btn btn-default" href="html/profile.html">
+            <!--<i class="fa fa-user"></i>-->
+            <img class="rounded-circle" alt="Smiley face" height="36" width="36" src="resource/allen_profile.jpg"/>
+        </a>
     </div>
-    </div>
-<div class="container-fluid row">
-    <div class="taskList col-sm-6">
+    </header>
+<div class=" row justify-content-around" style="margin-top: 5vh">
+    <div class="taskList col-sm-4">
 
-            <ul  class="list-group">
-                <li class="list-group-item row">
-                    <div class="d-flex w-100 justify-content-around">
-                        <button id="ongoing">Ongoing</button>
-                        <button id="completed">Completed</button>
+            <ul  class="list-group mb-3">
+                <li class=" row flex-md-row mb-4">
+                    <div class="d-flex w-100 justify-content-around ">
+                        <button class="btn btn-lg same_back" id="ongoing">Ongoing</button>
+
+                        <button class="btn btn-lg same_back inactive_btn" id="completed">Completed</button>
                     </div>
                 </li>
-                <li class="list-group-item row ongoing task">
-                    <div class="d-flex w-100 justify-content-between">
+                <li class=" rounded list-group-item row ongoing task card flex-md-row mb-4 shadow-sm upcoming">
+                    <div class="d-flex w-100 justify-content-between card-body d-flex flex-column align-items-start">
                         <h5 class="mb-1">Exercise</h5>
-                        <small>2 hrs</small>
-                        <button class="ongoing finishbtn"> complete </button>
-                        <button class="completed finishbtn"> undo </button>
+                        <small>15:30pm</small>
+                        <!--<button class="ongoing finishbtn"> complete </button>-->
+                        <!--<button class="completed finishbtn"> undo </button>-->
                     </div>
                 </li>
-                <li class="list-group-item row ongoing task">
-                    <div class="d-flex w-100 justify-content-between">
+                <li class="rounded list-group-item row ongoing task card flex-md-row mb-4 shadow-sm h-md-250">
+                    <div class="d-flex w-100 justify-content-between card-body d-flex flex-column align-items-start">
                         <h5 class="mb-1">Meet with Dr.Dow</h5>
-                        <small>1 hr</small>
-                        <button class="ongoing finishbtn"> complete </button>
-                        <button class="completed finishbtn"> undo </button>
+                        <small>17:00pm</small>
+                        <!--<button class="ongoing finishbtn"> complete </button>-->
+                        <!--<button class="completed finishbtn"> undo </button>-->
                     </div>
                 </li>
-                <li class="list-group-item row completed task">
-                    <div class="d-flex w-100 justify-content-between">
+                <li class=" rounded list-group-item row completed task card flex-md-row mb-4 shadow-sm h-md-250">
+                    <div class="d-flex w-100 justify-content-between card-body d-flex flex-column align-items-start">
                         <h5 class="mb-1">Meditation</h5>
-                        <small>2 hrs</small>
-                        <button class="ongoing finishbtn"> complete </button>
-                        <button class="completed finishbtn"> undo </button>
-                    </div>
-                </li>
-                <li class="list-group-item ongoing row">
-                    <div class="d-flex w-100 justify-content-around">
-                        <button style="width:auto;font-size: large;"><a href="html/addTask.html">add task + </a></button>
+                        <small>11:00am</small>
+                        <!--<button class="ongoing finishbtn"> complete </button>-->
+                        <!--<button class="completed finishbtn"> undo </button>-->
                     </div>
                 </li>
             </ul>
+        <div class="d-flex rounded-circle justify-content-around">
+            <a class="btn rounded-circle add_btn" href="html/addTask.html">
+                <i class="material-icons">add</i>
+            </a>
+        </div>
         </div>
     <div class="mentalManage col-sm-6">
-        <div>
+        <div  class="jumbotron bg-white">
         <div class="d-flex w-100 justify-content-start">
         <h2>Feel free to take a break. </h2>
-            <button> <a href="html/explaination.html">?</a></button>
+           <a class="btn btn-lg" href="html/explaination.html">?</a>
 
         </div>
         <div class="progress">
-            <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
-                 aria-valuenow="41" aria-valuemin="0" aria-valuemax="100" style="width:40%">
+            <div class="rounded progress-bar progress-bar-success progress-bar-striped" role="progressbar"
+                 aria-valuenow="41" aria-valuemin="0" aria-valuemax="100" style="width:41%">
                 41
             </div>
         </div>
@@ -75,11 +85,11 @@
                 <small>Gloomy</small>
             </div>
         </div>
-        <div>
-            <h2>Daily Trends</h2>
-            <img src="resource/mental_chart.png" alt="Smiley face" height="264" id="lineChart"/>
-            <button><a href="html/chat.html">Chat with Your Therapist</a></button>
+        <div class="card">
+            <h3 class="card-header">Daily Trends</h3>
+            <img class="card-img" src="resource/mental_chart.png" alt="Smiley face" height="220" id="lineChart"/>
         </div>
+        <a class="btn btn-lg btn-primary btn-block" href="html/chat.html">Chat with Your Therapist</a>
     </div>
 
     </div>
