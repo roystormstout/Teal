@@ -1,12 +1,39 @@
 var onGoing = true;
+localStorage.setItem("mood","41");
+
+
+window.setInterval(function(){
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes();
+    var change_num = Math.floor(Math.random() * 10) - 5;
+    var new_mood = (parseInt(localStorage.getItem("mood")) + change_num).toString();
+    $("#moodbar").text(new_mood);
+    $("#moodbar").attr("aria-valuenow", new_mood);
+    if(change_num > 0)
+        $("#last_update").text(time+" wearable device detected anxiety "+ change_num.toString());
+    else
+        $("#last_update").text(time+" your heartbeat is stabilized "+ change_num.toString());
+    localStorage.setItem("mood",new_mood);
+}, 10000);
+
 showOngoing();
 $("#ongoing").click(showOngoing);
 $("#completed").click(showCompleted);
 
+$(function () {
+    $('[data-toggle="popover"]').popover()
+})
+$(function () {
+    $('.example-popover').popover({
+        container: 'body'
+    })
+})
 function showOngoing(event){
     $(".ongoing.vis").show();
     $("#refresh-btn").show();
     $(".completed").hide();
+    $("#ongoing").toggleClass('inactive_btn');
+    $("#completed").toggleClass('inactive_btn');
     onGoing = true;
 }
 
@@ -14,6 +41,8 @@ function showCompleted(event){
     $(".ongoing.vis").hide();
     $("#refresh-btn").hide();
     $(".completed").show();
+    $("#ongoing").toggleClass('inactive_btn');
+    $("#completed").toggleClass('inactive_btn');
     onGoing = false;
 }
 

@@ -5,17 +5,29 @@
     <title>Edit Your Profile</title>
     <link href="../css/bootstrap.min.css" rel="stylesheet"/>
     <script src="../js/jquery-3.3.1.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/bootstrap.bundle.js"></script>
+    <link href="../css/profile.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../css/animate.css">
 </head>
 <body>
-<div class="container">
-    <header class="bar align-self-start">
-        <button><a href="main.html">back</a></button>
+<div id="profile">
+    <header class="animated fadeInDown bg-white py-2 flex-nowrap justify-content-between align-items-center row">
+        <div class="col-sm-5" style="margin-left: 3vw"><h2 style="color:#56bac8; font-weight: bolder;">Teal</h2></div>
+        <div class="col-sm-5 " style="text-align: right;margin-right: 3vw;">
+            <a class="shadow rounded-circle btn back_btn" href="main.html">
+                <i class=" material-icons">arrow_back</i>
+            </a>
+        </div>
     </header>
-    <div class="align-self-between" style="display: block">
-        <img alt="Smiley face" height="256" width="256" src="../resource/allen_profile.jpg"/>
-        <button>Click here to change Profile Picture</button>
+
+    <div class=" container text-center " style="display: block">
+        <img class="d-block ml-auto mr-auto shadow mt-5" alt="Smiley face" height="200" src="../resource/allen_profile.jpg"/>
+        <button class="ml-auto mr-auto d-block btn btn-primary mt-5">Click here to change Profile Picture</button>
     </div>
-    <div></div>
 </div>
 </body>
 </html>

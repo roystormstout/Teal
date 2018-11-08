@@ -1,0 +1,10 @@
+#profile {
+    font-family: 'Poppins', sans-serif;
+    background: #f6f8fa;
+    min-height: 100vh;
+}
+
+.back_btn{
+    background-color: #56bac8;
+    color:white;
+}

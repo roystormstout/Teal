@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet">
     <script src="../js/jquery-3.3.1.min.js"></script>
-    <script src="../js/bootstrap.bundle.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
 
@@ -25,21 +25,22 @@
         </a>
     </div>
     </header>
+
 <div class=" row justify-content-around" style="margin-top: 5vh">
     <!--USE MODAL-->
     <div class="taskList col-sm-4">
         <div id="new_alert" class="alert alert-primary" role="alert">
-            A new session is added to your calendar.
+            Updated! A new session is found and added.
         </div>
         <div id="no_alert" class="alert alert-secondary" role="alert">
-            Your calender is already updated.
+            Your calender is already the newest version.
         </div>
             <ul  class="list-group mb-3">
                 <li class=" row flex-md-row mb-4">
                     <div class="d-flex w-100 justify-content-around ">
-                        <button class="btn btn-lg same_back" id="ongoing">Upcoming Sessions</button>
+                        <button class="btn btn-lg same_back inactive_btn" id="ongoing">Upcoming Sessions</button>
 
-                        <button class="btn btn-lg same_back inactive_btn" id="completed">Past</button>
+                        <button class="btn btn-lg same_back" id="completed">Past</button>
                     </div>
                 </li>
                 <li data-toggle="modal" data-target="#exampleModal" data-pass="Upcoming Session"
@@ -90,14 +91,20 @@
         </div>
         </div>
     <div class="mentalManage col-sm-6">
-        <div  class="jumbotron bg-white">
+        <div  class="jumbotron bg-white shadow-sm">
         <div class="d-flex w-100 justify-content-start mb-2">
         <h3>Feel free to take a break. </h3>
-           <a class="btn btn-lg" href="explaination.html">?</a>
+           <button class="btn btn-lg"
+              data-toggle="popover"
+              title="The Mood Bar"
+                   data-placement="bottom"
+                   data-content="The mood bar is a numeric representation of your current mood.
+        It changes with your heartbeats and your interactions with your therapist and people on the social media."
+              ><i class="material-icons" style="color:darkgray">info</i> </button>
 
         </div>
         <div class="progress">
-            <div class="rounded progress-bar progress-bar-success" role="progressbar"
+            <div id="moodbar" class="rounded progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
                  aria-valuenow="41" aria-valuemin="0" aria-valuemax="100" style="width:41%">
                 41
             </div>
@@ -108,7 +115,7 @@
             </div>
             <div style="color:gray">
                 <h5>Last update:</h5>
-                <span id="last_update"><span>16:37:</span> usage of aggressive vocabulary detected +5 </span>
+                <span id="last_update">16:37 usage of aggressive vocabulary detected +5 </span>
             </div>
         </div>
         <div>
