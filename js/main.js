@@ -4,14 +4,14 @@ $("#ongoing").click(showOngoing);
 $("#completed").click(showCompleted);
 
 function showOngoing(event){
-    $(".ongoing").show();
+    $(".ongoing.vis").show();
     $("#refresh-btn").show();
     $(".completed").hide();
     onGoing = true;
 }
 
 function showCompleted(event){
-    $(".ongoing").hide();
+    $(".ongoing.vis").hide();
     $("#refresh-btn").hide();
     $(".completed").show();
     onGoing = false;
@@ -38,6 +38,7 @@ function showTask(event){
     var task_ = $("#new_task");
         if(task_.is(":hidden")) {
             task_.show();
+            task_.toggleClass('vis');
             $("#new_alert").show().delay(2000).fadeOut();
         } else{
             $("#no_alert").show().delay(2000).fadeOut();
