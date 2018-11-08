@@ -6,7 +6,12 @@ window.setInterval(function(){
     var today = new Date();
     var time = today.getHours() + ":" + today.getMinutes();
     var change_num = Math.floor(Math.random() * 15) - 7;
-    var new_mood = (parseInt(localStorage.getItem("mood")) + change_num).toString();
+    var new_num= (parseInt(localStorage.getItem("mood")) + change_num);
+    if(new_num < 0)
+        new_num = 0;
+    if(new_num> 100)
+        new_num = 100;
+    var new_mood = new_num.toString();
     $("#moodbar").text(new_mood);
     $("#moodbar").attr("aria-valuenow", new_mood);
     $("#moodbar").attr("style", "width:"+new_mood+"%");
