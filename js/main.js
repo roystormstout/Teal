@@ -5,10 +5,11 @@ localStorage.setItem("mood","41");
 window.setInterval(function(){
     var today = new Date();
     var time = today.getHours() + ":" + today.getMinutes();
-    var change_num = Math.floor(Math.random() * 10) - 5;
+    var change_num = Math.floor(Math.random() * 15) - 7;
     var new_mood = (parseInt(localStorage.getItem("mood")) + change_num).toString();
     $("#moodbar").text(new_mood);
     $("#moodbar").attr("aria-valuenow", new_mood);
+    $("#moodbar").attr("style", "width:"+new_mood+"%");
     if(change_num > 0)
         $("#last_update").text(time+" wearable device detected anxiety "+ change_num.toString());
     else
