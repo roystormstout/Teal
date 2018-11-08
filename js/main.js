@@ -16,7 +16,7 @@ window.setInterval(function(){
     $("#moodbar").attr("aria-valuenow", new_mood);
     $("#moodbar").attr("style", "width:"+new_mood+"%");
     if(change_num > 0)
-        $("#last_update").text(time+" wearable device detected anxiety "+ change_num.toString());
+        $("#last_update").text(time+" wearable device detected anxiety +"+ change_num.toString());
     else
         $("#last_update").text(time+" your heartbeat is stabilized "+ change_num.toString());
     localStorage.setItem("mood",new_mood);
