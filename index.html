@@ -1,150 +1,41 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Main - </title>
-    <link href="css/main.css" rel="stylesheet"/>
+    <title>LOGIN</title>
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="css/animate.css">
-    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link rel="stylesheet" href="css/animate.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-          rel="stylesheet">
+          rel="stylesheet"/>
+    <link href="css/login.css" rel="stylesheet"/>
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.bundle.js"></script>
+
 </head>
 <body>
+<div id="login" class="row">
 
-<div id="main">
-<header class="animated fadeInDown bg-white py-2 flex-nowrap justify-content-between align-items-center row">
-    <div class="col-sm-5" style="margin-left: 3vw"><h2 style="color:#56bac8; font-weight: bolder;">Teal</h2></div>
-    <div class="col-sm-5 " style="text-align: right;margin-right: 3vw;">
-        <span>Hi, Allen!</span>
-        <a class="btn btn-default" href="html/profile.html">
-            <!--<i class="fa fa-user"></i>-->
-            <img class="rounded-circle" alt="Smiley face" height="36" width="36" src="resource/allen_profile.jpg"/>
-        </a>
+    <div class="col-9 align-self-center text-center" style="color:#56bac8;">
+        <h1 class="font-weight-bold">Teal </h1>
+        <p>Brilliant things happen in calm minds.</p>
     </div>
-    </header>
-<div class=" row justify-content-around" style="margin-top: 5vh">
-    <!--USE MODAL-->
-    <div class="taskList col-sm-4">
-        <div id="new_alert" class="alert alert-primary" role="alert">
-            A new session is added to your calendar.
-        </div>
-        <div id="no_alert" class="alert alert-secondary" role="alert">
-            Your calender is already updated.
-        </div>
-            <ul  class="list-group mb-3">
-                <li class=" row flex-md-row mb-4">
-                    <div class="d-flex w-100 justify-content-around ">
-                        <button class="btn btn-lg same_back" id="ongoing">Upcoming Sessions</button>
-
-                        <button class="btn btn-lg same_back inactive_btn" id="completed">Past</button>
-                    </div>
-                </li>
-                <li data-toggle="modal" data-target="#exampleModal" data-pass="Upcoming Session"
-                    data-date="November 10, 2018" data-description="Regular session with Dr.Dow."
-                    class="vis rounded list-group-item row ongoing task card flex-md-row mb-4 shadow-sm upcoming">
-                    <div class=" d-flex w-100  card-body d-flex flex-column ">
-                        <h4 class="mb-1">November 10, 2018</h4>
-                        <p>17:00pm</p>
-                        <!--<button class="ongoing finishbtn"> complete </button>-->
-                        <!--<button class="completed finishbtn"> undo </button>-->
-                    </div>
-                </li>
-                <li data-toggle="modal" data-target="#exampleModal" data-pass="Upcoming Session"
-                    data-date="November 19, 2018" data-description="Regular session with Dr.Dow + Feedback on new stress-relief method."
-                    class="vis rounded list-group-item row ongoing task card flex-md-row mb-4 shadow-sm">
-                    <div class="d-flex w-100 card-body d-flex flex-column ">
-                        <h4 class="mb-1">November 19, 2018</h4>
-                        <p>17:00pm</p>
-                        <!--<button class="ongoing finishbtn"> complete </button>-->
-                        <!--<button class="completed finishbtn"> undo </button>-->
-                    </div>
-                </li>
-                <li data-toggle="modal" data-target="#exampleModal" data-pass="Upcoming Session"
-                    data-date="December 4, 2018" data-description="Regular session with Dr.Dow."
-                    class="rounded list-group-item row ongoing task card flex-md-row mb-4 shadow-sm " id="new_task">
-                    <div class="d-flex w-100 card-body d-flex flex-column ">
-                        <h4 class="mb-1">December 4, 2018</h4>
-                        <p>17:00pm</p>
-                        <!--<button class="ongoing finishbtn"> complete </button>-->
-                        <!--<button class="completed finishbtn"> undo </button>-->
-                    </div>
-                </li>
-                <li data-toggle="modal" data-target="#exampleModal" data-pass="Past Session" data-date="November 2, 2018"
-                    data-description="Allen is doing better everyday. Glad to know that he becomes more productive at work."
-                    class=" rounded list-group-item row completed task card flex-md-row mb-4 shadow-sm h-md-250 gray_back">
-                    <div class="d-flex w-100 justify-content-between card-body d-flex flex-column align-items-start">
-                        <h4 class="mb-1">November 2, 2018</h4>
-                        <p>13:00pm</p>
-                        <!--<button class="ongoing finishbtn"> complete </button>-->
-                        <!--<button class="completed finishbtn"> undo </button>-->
-                    </div>
-                </li>
-            </ul>
-        <div class="d-flex rounded-circle justify-content-around ongoing ">
-            <button class="btn rounded-circle add_btn shadow" id="refresh-btn">
-                <i class="material-icons">refresh</i>
-            </button>
-        </div>
-        </div>
-    <div class="mentalManage col-sm-6">
-        <div  class="jumbotron bg-white">
-        <div class="d-flex w-100 justify-content-start mb-2">
-        <h3>Feel free to take a break. </h3>
-           <a class="btn btn-lg" href="html/explaination.html">?</a>
-
-        </div>
-        <div class="progress">
-            <div class="rounded progress-bar progress-bar-success" role="progressbar"
-                 aria-valuenow="41" aria-valuemin="0" aria-valuemax="100" style="width:41%">
-                41
+    <div class="col-3 animated fadeInRight login_bar shadow">
+        <div class="align-self-center login_face">
+        <h3 class="pl-4">Login</h3>
+        <form class="p-4">
+            <div class="form-group">
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username">
             </div>
-        </div>
-            <div class="d-flex w-100 justify-content-between mb-3">
-                <small>Peaceful</small>
-                <small>Gloomy</small>
+            <div class="form-group">
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
             </div>
-            <div style="color:gray">
-                <h5>Last update:</h5>
-                <span id="last_update"><span>16:37:</span> usage of aggressive vocabulary detected +5 </span>
-            </div>
-        </div>
-        <div>
-            <!--<h3>Daily Trends</h3>-->
-            <figure class="figure">
-                <img src="resource/mental_chart.png" height="328" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
-            </figure>
+            <a class="text-center btn rounded-circle shadow login_btn" href="html/main.html">
+                <i class=" material-icons">keyboard_arrow_right</i>
+            </a>
+        </form>
         </div>
     </div>
-    <!--TODO: USE COLLAPSE-->
-    <a class="float rounded-circle add_btn btn-lg" href="html/chat.html">
-        <i class="my-float material-icons">chat</i></a>
-    </div>
-
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Session with Dr.Dow</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p id="session-date"></p>
-                    <p id="session-description"></p>
-
-                </div>
-                <div class="modal-footer" >
-                    <button type="button" class="btn btn-primary " data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
 </div>
-<script src="js/main.js"></script>
 </body>
 </html>

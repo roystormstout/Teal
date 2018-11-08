@@ -1,0 +1,17 @@
+#login {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+}
+
+.login_bar{
+    background-color: #f6f8fa;
+
+}
+.login_face{
+    margin-top: 20vh;
+}
+
+.login_btn{
+    background-color: #56bac8;
+    color:white;
+}
