@@ -14,28 +14,96 @@
 
 </head>
 <body>
-<div id="login" class="row">
-
-    <div class="col-9 align-self-center text-center" style="color:#56bac8;">
-        <h1 class="font-weight-bold">Teal </h1>
-        <p>Brilliant things happen in calm minds.</p>
-    </div>
-    <div class="col-3 animated fadeInRight login_bar shadow">
-        <div class="align-self-center login_face">
-        <h3 class="pl-4">Login</h3>
-        <form class="p-4">
-            <div class="form-group">
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username">
+<div id="carouselExampleControls" class="carousel slide" data-wrap="false" data-interval="false">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="row">
+                <div class="col-12">
+                <div class="middle align-self-center text-center animated fadeIn" style="color:#56bac8; height: 100vh;">
+                    <h1 class="font-weight-bold">Teal </h1>
+                    <p>Brilliant things happen in calm minds.</p>
+                </div>
             </div>
-            <div class="form-group">
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
             </div>
-            <a class="text-center btn rounded-circle shadow login_btn" href="html/main.html">
-                <i class=" material-icons" style="margin-top:5px;">keyboard_arrow_right</i>
-            </a>
-        </form>
+        </div>
+        <div class="carousel-item">
+        <div class="row justify-content-center">
+            <div class="col-5 middle">
+                <div class="align-self-center text-left animated slideInLeft" style="color:#424242;">
+                    <h1 class="font-weight-bold">Keeping Track </h1>
+                    <p>Measuring your stress level in real time.</p>
+                </div>
+            </div>
+            <div class="col-4 pic_face animated slideInRight">
+                <img src="resource/page1.png" style="width: 30vw;" alt="page1_pic"/>
+            </div>
         </div>
     </div>
+        <div class="carousel-item">
+            <div class="row justify-content-center">
+                <div class="col-5 middle">
+                    <div class="align-self-center text-left animated slideInUp" style="color:#424242;">
+                        <h1 class="font-weight-bold ">Connecting </h1>
+                        <p>Connect with your therapist! Chat made easy and secured.</p>
+                    </div>
+                </div>
+                <div class="col-4 pic_face animated slideInDown">
+                    <img src="resource/page2.png" style="width: 30vw;" alt="page1_pic"/>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="row justify-content-center">
+                <div class="col-5 middle">
+                    <div class="align-self-center text-left animated rotateInDownLeft" style="color:#424242;">
+                        <h1 class="font-weight-bold ">Get things done </h1>
+                        <p>Know how you are doing from therapist's notes!</p>
+                    </div>
+                </div>
+                <div class="col-4 pic_face animated rotateInUpRight">
+                    <img src="resource/page3.png" style="width: 30vw;" alt="page1_pic"/>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div  id="login"  class="row">
+
+            <div class="col-9 align-self-center text-center" style="color:#56bac8;">
+                <h1 class="font-weight-bold">Teal </h1>
+                <p>Brilliant things happen in calm minds.</p>
+            </div>
+            <div class="col-3 animated fadeInRight login_bar shadow">
+                <div class="align-self-center login_face">
+                    <h3 class="pl-4">Login</h3>
+                    <form class="p-4">
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        </div>
+                        <a class="text-center btn rounded-circle shadow login_btn" href="html/main.html">
+                            <i class=" material-icons" style="margin-top:5px;" >keyboard_arrow_right</i>
+                        </a>
+                    </form>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <a class="carousel-control-prev" style="color:#56bac8" href="#carouselExampleControls" role="button" data-slide="prev">
+        <h4 style="color:#56bac8" aria-hidden="true">
+            <i class="material-icons" style="font-size: 64px;"> keyboard_arrow_left</i>
+        </h4>
+        <span class="sr-only" style="color:#56bac8">Previous</span>
+    </a>
+    <a class="carousel-control-next" style="color:#56bac8" href="#carouselExampleControls" role="button" data-slide="next">
+        <h4 style="color:#56bac8" aria-hidden="true">
+            <i class="material-icons" style="font-size: 64px;"> keyboard_arrow_right</i>
+        </h4>
+        <span class="sr-only" style="color:#56bac8">Next</span>
+    </a>
 </div>
+<script src="js/login.js"></script>
 </body>
 </html>

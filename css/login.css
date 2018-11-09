@@ -1,8 +1,11 @@
 #login {
     font-family: 'Poppins', sans-serif;
-    min-height: 100vh;
+    height: 100vh;
 }
 
+div {
+    font-family: 'Poppins', sans-serif;
+}
 .login_bar{
     background-color: #f6f8fa;
 
@@ -11,7 +14,20 @@
     margin-top: 20vh;
 }
 
+.pic_face {
+    margin-top: 20vh;
+    height: 100vh;
+}
+.middle{
+    margin-top: 40vh;
+}
+
 .login_btn{
     background-color: #56bac8;
     color:white;
+}
+
+#carouselExampleControls {
+    background-color: #f6f8fa;
+    height: 100vh;
 }
