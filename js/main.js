@@ -13,11 +13,16 @@ else{
 
 }
 
+$(".task").hover(function(){
+    $(this).toggleClass("shadow-sm");
+    $(this).toggleClass("shadow-lg");
+});
+
 
 window.setInterval(function(){
     var today = new Date();
     var time = today.getHours() + ":" + today.getMinutes();
-    var change_num = Math.floor(Math.random() * 20) - 10;
+    var change_num = Math.floor(Math.random() * 10) - 4;
     var new_num= (parseInt(localStorage.getItem("mood")) + change_num);
     if(new_num < 0)
         new_num = 0;
