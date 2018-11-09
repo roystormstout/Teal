@@ -72,7 +72,7 @@ function sendText(event) {
         var resp_box = $('<div></div>');
         resp_box.addClass("container").addClass("rounded").addClass("shadow-sm").addClass("msg_box");
         var resp_child = $('<span></span>');
-        resp_child.text('We can schedule an appointment to disscus about your feelings!');
+        resp_child.text('Glad to hear that you are less stressed out after chatting with me!');
         resp_box.append(resp_child);
         resp_node.append(resp_secondChild);
         resp_node.append(resp_box);

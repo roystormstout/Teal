@@ -131,24 +131,23 @@ function openChat(event){
         isChatOpen = false;
         chatBtn.children('i').text('chat');
 
-        window.setTimeout(function(){
-            var today = new Date();
-            var time = today.getHours() + ":" + today.getMinutes();
-            var change_num = Math.floor(Math.random() * 5) - 12;
-            var new_num= (parseInt(sessionStorage.getItem("mood")) + change_num);
-            if(new_num < 0)
-                new_num = 0;
-            if(new_num> 100)
-                new_num = 100;
-            var new_mood = new_num.toString();
-            $("#moodbar").text(new_mood);
-            $("#moodbar").attr("aria-valuenow", new_mood);
-            $("#moodbar").attr("style", "width:"+new_mood+"%");
-            $("#second_last_update").text(sessionStorage.getItem("latest"));
-            sessionStorage.setItem("latest",time + " quick chatting with therapist " + change_num.toString());
-            $("#last_update").text(time + " quick chatting with therapist " + change_num.toString());
+        var today = new Date();
+        var time = today.getHours() + ":" + today.getMinutes();
+        var change_num = Math.floor(Math.random() * 5) - 12;
+        var new_num= (parseInt(sessionStorage.getItem("mood")) + change_num);
+        if(new_num < 0)
+            new_num = 0;
+        if(new_num> 100)
+            new_num = 100;
+        var new_mood = new_num.toString();
+        $("#moodbar").text(new_mood);
+        $("#moodbar").attr("aria-valuenow", new_mood);
+        $("#moodbar").attr("style", "width:"+new_mood+"%");
+        $("#second_last_update").text(sessionStorage.getItem("latest"));
+        sessionStorage.setItem("latest",time + " quick chatting with therapist " + change_num.toString());
+        $("#last_update").text(time + " quick chatting with therapist " + change_num.toString());
+        sessionStorage.setItem("mood",new_mood);
 
-        },500)
         // minus points from mood bar
 
     } else {
