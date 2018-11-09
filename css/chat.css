@@ -1,8 +1,7 @@
 .chatBox {
-    height: 80vh;
+    height: 65vh;
     width: 100%;
-    border-style: inset;
-    overflow: scroll;
+    overflow: auto;
 }
 .user {
 
@@ -10,16 +9,28 @@
     padding-right: 20px;
 }
 .doc {
-
+text-align: left;
 }
 
 .message {
     width:100%;
     display: inline-block;
-    margin: 15px;
+    margin-bottom: 15px;
+    margin-top:10px;
+}
+.msg_box {
+    text-align: left;
+    font-size: small;
+    display: inherit;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    max-width: 55%;
+    width: fit-content;
+    background-color: #f0f2f4;
 }
 
-.message span {
-    padding: 10px;
-    border-style: solid;
+#upload_btn {
+    background-color: white;
+    color:#afb4b5;
+    margin-left: 1px;
 }

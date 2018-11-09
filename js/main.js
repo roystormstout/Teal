@@ -1,11 +1,23 @@
 var onGoing = true;
-localStorage.setItem("mood","41");
+if(localStorage.getItem("mood") == null) {
+    localStorage.setItem("mood", "41");
+    localStorage.setItem("latest", "16:37 usage of aggressive vocabulary detected +5 ");
+}
+
+else{
+    var saved_mood = localStorage.getItem("mood");
+    $("#moodbar").text(saved_mood);
+    $("#moodbar").attr("aria-valuenow", saved_mood);
+    $("#moodbar").attr("style", "width:"+saved_mood+"%");
+    $("#last_update").text(localStorage.getItem("latest"));
+
+}
 
 
 window.setInterval(function(){
     var today = new Date();
     var time = today.getHours() + ":" + today.getMinutes();
-    var change_num = Math.floor(Math.random() * 15) - 7;
+    var change_num = Math.floor(Math.random() * 20) - 10;
     var new_num= (parseInt(localStorage.getItem("mood")) + change_num);
     if(new_num < 0)
         new_num = 0;
@@ -15,12 +27,16 @@ window.setInterval(function(){
     $("#moodbar").text(new_mood);
     $("#moodbar").attr("aria-valuenow", new_mood);
     $("#moodbar").attr("style", "width:"+new_mood+"%");
-    if(change_num > 0)
-        $("#last_update").text(time+" wearable device detected anxiety +"+ change_num.toString());
-    else
-        $("#last_update").text(time+" your heartbeat is stabilized "+ change_num.toString());
+    if(change_num > 0) {
+        localStorage.setItem("latest",time + " wearable device detected anxiety +" + change_num.toString());
+        $("#last_update").text(time + " wearable device detected anxiety +" + change_num.toString());
+    }
+    else {
+        localStorage.setItem("latest",time +" your heartbeat is stabilizing " + change_num.toString());
+        $("#last_update").text(time + " your heartbeat is stabilizing " + change_num.toString());
+    }
     localStorage.setItem("mood",new_mood);
-}, 10000);
+}, 30000);
 
 showOngoing();
 $("#ongoing").click(showOngoing);
@@ -85,14 +101,17 @@ $('#exampleModal').on('show.bs.modal', function (event) {
     var button = $(event.relatedTarget) // Button that triggered the modal
     var tar_date = button.data('date') // Extract info from data-* attributes
     var tar_session = button.data('pass')
+    var tar_type = button.data('type')
     var tar_description = button.data('description')
     // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
     // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
     var modal = $(this)
-    modal.find('.modal-title').text(tar_session)
-    modal.find('#session-date').text("Date: "+ tar_date)
+    modal.find('.modal-title').text(tar_session+": "+ tar_type)
+    modal.find('#session-date').text("Time: "+ tar_date)
     if(tar_session=="Upcoming Session")
         modal.find('#session-description').text("Description: "+ tar_description)
     else
         modal.find('#session-description').text("Feedback: "+ tar_description)
 })
+
+

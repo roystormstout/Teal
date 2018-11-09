@@ -11,6 +11,8 @@
           rel="stylesheet">
     <script src="../js/jquery-3.3.1.min.js"></script>
     <script src="../js/bootstrap.bundle.min.js"></script>
+    <link href="../css/chat.css" rel="stylesheet"/>
+
 </head>
 <body>
 
@@ -21,7 +23,7 @@
         <span>Hi, Allen!</span>
         <a class="btn btn-default" href="profile.html">
             <!--<i class="fa fa-user"></i>-->
-            <img class="rounded-circle" alt="Smiley face" height="36" width="36" src="../resource/allen_profile.jpg"/>
+            <img class="rounded-circle" alt="prfile_pic" height="36" width="36" src="../resource/allen_profile.jpg"/>
         </a>
     </div>
     </header>
@@ -33,51 +35,58 @@
             Updated! A new session is found and added.
         </div>
         <div id="no_alert" class="alert alert-secondary" role="alert">
-            Your calender is already the newest version.
+            Your calender is up-to-date.
         </div>
             <ul  class="list-group mb-3">
                 <li class=" row flex-md-row mb-4">
                     <div class="d-flex w-100 justify-content-around ">
-                        <button class="btn btn-lg same_back inactive_btn" id="ongoing">Upcoming Sessions</button>
+                        <button class="btn btn-lg same_back inactive_btn" id="ongoing">Upcoming </button>
 
                         <button class="btn btn-lg same_back" id="completed">Past</button>
                     </div>
                 </li>
-                <li data-toggle="modal" data-target="#exampleModal" data-pass="Upcoming Session"
-                    data-date="November 10, 2018" data-description="Regular session with Dr.Dow."
-                    class="vis rounded list-group-item row ongoing task card flex-md-row mb-4 shadow-sm upcoming">
-                    <div class=" d-flex w-100  card-body d-flex flex-column ">
-                        <h4 class="mb-1">November 10, 2018</h4>
-                        <p>17:00pm</p>
+                <li data-toggle="modal" data-target="#exampleModal" data-pass="Upcoming Session" data-type="Appointment"
+                    data-date="November 10, 2018, 13:00pm" data-description="Regular session with Dr.Dow."
+                    class="vis rounded list-group-item row ongoing task card flex-md-row mb-3 shadow-sm upcoming">
+                    <div class=" d-flex w-100  p-2  d-flex flex-column ">
+                        <h6>Appointment</h6>
+                        <h5 class="mb-1">November 10, 2018</h5>
+                        <p>13:00pm</p>
+                        <!--<button class="ongoing finishbtn"> complete </button>-->
+                        <!--<button class="completed finishbtn"> undo </button>-->
+                    </div>
+                </li>
+                <li data-toggle="modal" data-target="#exampleModal" data-pass="Upcoming Session" data-type="Stress Relief Session"
+                    data-date="November 19, 2018, 15:00pm"
+                    data-description="Come to the office to learn some methods for relieving your stress."
+                    class="vis rounded list-group-item row ongoing task card flex-md-row mb-3 shadow-sm">
+                    <div class="d-flex w-100 p-2 d-flex flex-column ">
+                        <h6>Stress Relief Session</h6>
+                        <h5 class="mb-1">November 19, 2018</h5>
+                        <p>15:00pm</p>
                         <!--<button class="ongoing finishbtn"> complete </button>-->
                         <!--<button class="completed finishbtn"> undo </button>-->
                     </div>
                 </li>
                 <li data-toggle="modal" data-target="#exampleModal" data-pass="Upcoming Session"
-                    data-date="November 19, 2018" data-description="Regular session with Dr.Dow + Feedback on new stress-relief method."
-                    class="vis rounded list-group-item row ongoing task card flex-md-row mb-4 shadow-sm">
-                    <div class="d-flex w-100 card-body d-flex flex-column ">
-                        <h4 class="mb-1">November 19, 2018</h4>
+                    data-date="December 4, 2018, 17:00pm" data-type="Online Chatting"
+                    data-description="Quick online chatting session. Feedback on the new stress relief methods."
+                    class="rounded list-group-item row ongoing task card flex-md-row mb-2 shadow-sm " id="new_task">
+                    <div class="d-flex w-100 p-2  d-flex flex-column ">
+                        <h6>Online Chatting</h6>
+                        <h5 class="mb-1">December 4, 2018</h5>
                         <p>17:00pm</p>
                         <!--<button class="ongoing finishbtn"> complete </button>-->
                         <!--<button class="completed finishbtn"> undo </button>-->
                     </div>
                 </li>
-                <li data-toggle="modal" data-target="#exampleModal" data-pass="Upcoming Session"
-                    data-date="December 4, 2018" data-description="Regular session with Dr.Dow."
-                    class="rounded list-group-item row ongoing task card flex-md-row mb-4 shadow-sm " id="new_task">
-                    <div class="d-flex w-100 card-body d-flex flex-column ">
-                        <h4 class="mb-1">December 4, 2018</h4>
-                        <p>17:00pm</p>
-                        <!--<button class="ongoing finishbtn"> complete </button>-->
-                        <!--<button class="completed finishbtn"> undo </button>-->
-                    </div>
-                </li>
-                <li data-toggle="modal" data-target="#exampleModal" data-pass="Past Session" data-date="November 2, 2018"
+                <li data-toggle="modal" data-target="#exampleModal" data-pass="Past Session"
+                    data-date="November 2, 2018, 13:00pm" data-type="Online Chatting"
                     data-description="Allen is doing better everyday. Glad to know that he becomes more productive at work."
-                    class=" rounded list-group-item row completed task card flex-md-row mb-4 shadow-sm h-md-250 gray_back">
-                    <div class="d-flex w-100 justify-content-between card-body d-flex flex-column align-items-start">
-                        <h4 class="mb-1">November 2, 2018</h4>
+                    class=" rounded list-group-item row completed task card flex-md-row mb-3 shadow-sm h-md-250 gray_back">
+                    <div class="d-flex w-100 justify-content-between p-2 d-flex flex-column align-items-start">
+                        <h6>Online Chatting</h6>
+                        <h5 class="mb-1">November 2, 2018</h5>
                         <p>13:00pm</p>
                         <!--<button class="ongoing finishbtn"> complete </button>-->
                         <!--<button class="completed finishbtn"> undo </button>-->
@@ -86,7 +95,7 @@
             </ul>
         <div class="d-flex rounded-circle justify-content-around ongoing ">
             <button class="btn rounded-circle add_btn shadow" id="refresh-btn">
-                <i class="material-icons">refresh</i>
+                <i class="material-icons" style="margin-top:5px;">refresh</i>
             </button>
         </div>
         </div>
@@ -126,9 +135,42 @@
         </div>
     </div>
     <!--TODO: USE COLLAPSE-->
-    <a class="float rounded-circle add_btn btn-lg" href="chat.html">
-        <i class="my-float material-icons">chat</i></a>
+        <a  data-toggle="collapse" role="button" aria-expanded="false"
+            aria-controls="collapseExample" class="float rounded-circle add_btn btn " href="#collapseExample" >
+            <i class="my-float material-icons">chat</i>
+        </a>
+    <div class="collapse float_chat animated rotateInUpRight shadow rounded" id="collapseExample" >
+        <header class="p-2 rounded-top" style="background-color: #8fdee5; color:white; text-align: right;">
+            <i class="material-icons"> phone </i>
+            <i class="material-icons"> videocam </i>
+        </header>
+        <div  class="container">
+            <div id="chatBox" class="chatBox">
+                <div class="container message doc">
+                    <img src="../resource/threapist.jpg" class="rounded-circle" height="32" width="32" alt="therapist_pic"/>
+                    <div class="container msg_box rounded shadow-sm ">
+                    <span>Hi, how are you feeling?</span>
+                    </div>
+                </div>
+                <div class=" container message user">
+                    <div class="container msg_box rounded shadow-sm">
+                    <span>I have too much homework to do. I am feeling stressed out:(</span>
+                    </div>
+                    <img src="../resource/allen_profile.jpg" class="rounded-circle" height="32" width="32" alt="user"/>
+                </div>
+            </div>
+            <div class="input-group mb-3 align-self-end">
+                <input type="text" class="form-control" id="msg" placeholder="type your message here..." aria-label="Type here..." aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                    <button class="input-group-button btn" id="upload_btn">
+                        <i class="material-icons"> attach_file </i>
+                    </button>
+                </div>
+            </div>
+            <script src="../js/chat.js"></script>
+        </div>
     </div>
+</div>
 
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">

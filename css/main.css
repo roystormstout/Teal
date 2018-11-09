@@ -43,6 +43,15 @@
     box-shadow: 2px 2px 3px #999;
 }
 
+.float_chat {
+    position:fixed;
+    width:40vw;
+    height:79vh;
+    bottom:15vh;
+    right:10px;
+    text-align:center;
+    background-color: white;
+}
 .my-float{
     margin-top:11px;
 }
