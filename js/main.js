@@ -1,15 +1,15 @@
 var onGoing = true;
-if(localStorage.getItem("mood") == null) {
-    localStorage.setItem("mood", "41");
-    localStorage.setItem("latest", "16:37 usage of aggressive vocabulary detected +5 ");
+if(sessionStorage.getItem("mood") == null) {
+    sessionStorage.setItem("mood", "41");
+    sessionStorage.setItem("latest", "1:37 usage of aggressive vocabulary detected +5 ");
 }
 
 else{
-    var saved_mood = localStorage.getItem("mood");
+    var saved_mood = sessionStorage.getItem("mood");
     $("#moodbar").text(saved_mood);
     $("#moodbar").attr("aria-valuenow", saved_mood);
     $("#moodbar").attr("style", "width:"+saved_mood+"%");
-    $("#last_update").text(localStorage.getItem("latest"));
+    $("#last_update").text(sessionStorage.getItem("latest"));
 
 }
 
@@ -22,8 +22,8 @@ $(".task").hover(function(){
 window.setInterval(function(){
     var today = new Date();
     var time = today.getHours() + ":" + today.getMinutes();
-    var change_num = Math.floor(Math.random() * 10) - 4;
-    var new_num= (parseInt(localStorage.getItem("mood")) + change_num);
+    var change_num = Math.floor(Math.random() * 10) - 5;
+    var new_num= (parseInt(sessionStorage.getItem("mood")) + change_num);
     if(new_num < 0)
         new_num = 0;
     if(new_num> 100)
@@ -33,14 +33,16 @@ window.setInterval(function(){
     $("#moodbar").attr("aria-valuenow", new_mood);
     $("#moodbar").attr("style", "width:"+new_mood+"%");
     if(change_num > 0) {
-        localStorage.setItem("latest",time + " wearable device detected anxiety +" + change_num.toString());
+        $("#second_last_update").text(sessionStorage.getItem("latest"));
+        sessionStorage.setItem("latest",time + " wearable device detected anxiety +" + change_num.toString());
         $("#last_update").text(time + " wearable device detected anxiety +" + change_num.toString());
     }
     else {
-        localStorage.setItem("latest",time +" your heartbeat is stabilizing " + change_num.toString());
+        $("#second_last_update").text(sessionStorage.getItem("latest"));
+        sessionStorage.setItem("latest",time +" your heartbeat is stabilizing " + change_num.toString());
         $("#last_update").text(time + " your heartbeat is stabilizing " + change_num.toString());
     }
-    localStorage.setItem("mood",new_mood);
+    sessionStorage.setItem("mood",new_mood);
 }, 30000);
 
 showOngoing();
@@ -120,3 +122,38 @@ $('#exampleModal').on('show.bs.modal', function (event) {
 })
 
 
+
+var isChatOpen = false;
+var chatBtn =$('#chat_btn');
+chatBtn.click(openChat);
+function openChat(event){
+    if(isChatOpen) {
+        isChatOpen = false;
+        chatBtn.children('i').text('chat');
+
+        window.setTimeout(function(){
+            var today = new Date();
+            var time = today.getHours() + ":" + today.getMinutes();
+            var change_num = Math.floor(Math.random() * 5) - 12;
+            var new_num= (parseInt(sessionStorage.getItem("mood")) + change_num);
+            if(new_num < 0)
+                new_num = 0;
+            if(new_num> 100)
+                new_num = 100;
+            var new_mood = new_num.toString();
+            $("#moodbar").text(new_mood);
+            $("#moodbar").attr("aria-valuenow", new_mood);
+            $("#moodbar").attr("style", "width:"+new_mood+"%");
+            $("#second_last_update").text(sessionStorage.getItem("latest"));
+            sessionStorage.setItem("latest",time + " quick chatting with therapist " + change_num.toString());
+            $("#last_update").text(time + " quick chatting with therapist " + change_num.toString());
+
+        },500)
+        // minus points from mood bar
+
+    } else {
+        isChatOpen = true;
+        chatBtn.children('i').text('close');
+    }
+
+}

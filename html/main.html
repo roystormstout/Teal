@@ -41,7 +41,6 @@
                 <li class=" row flex-md-row mb-4">
                     <div class="d-flex w-100 justify-content-around ">
                         <button class="btn btn-lg same_back inactive_btn" id="ongoing">Upcoming </button>
-
                         <button class="btn btn-lg same_back" id="completed">Past</button>
                     </div>
                 </li>
@@ -100,9 +99,9 @@
         </div>
         </div>
     <div class="mentalManage col-sm-6">
-        <div  class="jumbotron bg-white shadow-sm">
+        <div  class="jumbotron bg-white shadow-sm" style="padding: 2rem 1rem;">
         <div class="d-flex w-100 justify-content-start mb-2">
-        <h3>Feel free to take a break. </h3>
+        <h5>Feel free to take a break. </h5>
            <button class="btn btn-lg"
               data-toggle="popover"
               title="The Mood Bar"
@@ -110,10 +109,9 @@
                    data-content="The mood bar is a numeric representation of your current mood.
         It changes with your heartbeats and your interactions with your therapist and people on the social media."
               ><i class="material-icons" style="color:darkgray">info</i> </button>
-
         </div>
-        <div class="progress">
-            <div id="moodbar" class="rounded progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+        <div class="progress" style="height: 2rem;font-size: 1rem;">
+            <div id="moodbar" class="rounded progress-bar progress-bar-animated" role="progressbar"
                  aria-valuenow="41" aria-valuemin="0" aria-valuemax="100" style="width:41%">
                 41
             </div>
@@ -123,20 +121,30 @@
                 <small>Gloomy</small>
             </div>
             <div style="color:gray">
-                <h5>Last update:</h5>
-                <span id="last_update">16:37 usage of aggressive vocabulary detected +5 </span>
+                <div style="">Last update:</div>
+                <div>
+                <small id="last_update">1:37 usage of aggressive vocabulary detected +5 </small>
+                </div>
+                <div>
+                    <small id="second_last_update"></small>
+                </div>
             </div>
         </div>
-        <div>
-            <!--<h3>Daily Trends</h3>-->
+        <div class="jumbotron bg-white shadow-sm "  style="padding: 2rem 1rem;">
+            <div class=" w-100 mb-2">
+            <h4>Weekly Trend</h4>
+            <small style="color: gray;"><span style="color: greenyellow;"> -12% </span> comparing to last week.</small>
+            <small style="color: gray;">Keep :)ing.</small>
+            </div>
             <figure class="figure">
-                <img src="../resource/mental_chart.png" height="328" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                <img src="../resource/mental_chart.jpg" height="248" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
             </figure>
         </div>
+
     </div>
     <!--TODO: USE COLLAPSE-->
         <a  data-toggle="collapse" role="button" aria-expanded="false"
-            aria-controls="collapseExample" class="float rounded-circle add_btn btn " href="#collapseExample" >
+            aria-controls="collapseExample" class="float rounded-circle add_btn btn " href="#collapseExample" id="chat_btn">
             <i class="my-float material-icons">chat</i>
         </a>
     <div class="collapse float_chat animated rotateInUpRight shadow rounded" id="collapseExample" >
@@ -146,17 +154,17 @@
         </header>
         <div  class="container">
             <div id="chatBox" class="chatBox">
+                <div class=" container message user">
+                    <div class="container msg_box rounded shadow-sm">
+                    <span>Hello doctor. I feel stressed. I have too much homework to do.</span>
+                    </div>
+                    <img src="../resource/allen_profile.jpg" class="rounded-circle" height="32" width="32" alt="user"/>
+                </div>
                 <div class="container message doc">
                     <img src="../resource/threapist.jpg" class="rounded-circle" height="32" width="32" alt="therapist_pic"/>
                     <div class="container msg_box rounded shadow-sm ">
-                    <span>Hi, how are you feeling?</span>
+                        <span>We can schedule an appointment to disscus about your feelings! Let me know your availability and I can put you on the calendar. :D</span>
                     </div>
-                </div>
-                <div class=" container message user">
-                    <div class="container msg_box rounded shadow-sm">
-                    <span>I have too much homework to do. I am feeling stressed out:(</span>
-                    </div>
-                    <img src="../resource/allen_profile.jpg" class="rounded-circle" height="32" width="32" alt="user"/>
                 </div>
             </div>
             <div class="input-group mb-3 align-self-end">
