@@ -1,3 +1,3 @@
 # Teal
 
-CSE 170 Project to help making connection between therapists and users easier.
+CSE 170 Project to help connectioning therapists and patients.
