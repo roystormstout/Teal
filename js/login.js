@@ -40,3 +40,10 @@ function validate(){
         return false;
     }
 }
+
+$(document).keypress(function(e) {
+    if(e.which == 13 && $('.carousel-inner .carousel-item:last').hasClass('active')) {
+        validate.call($('#loginForm'))
+    }
+
+});

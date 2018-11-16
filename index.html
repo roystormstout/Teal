@@ -75,7 +75,7 @@
             <div class="col-3 animated fadeInRight login_bar shadow">
                 <div class="align-self-center login_face">
                     <h3 class="pl-4">Login</h3>
-                    <form class="p-4">
+                    <form class="p-4" id="loginForm">
                         <div class="form-group">
                             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username">
                         </div>
@@ -83,7 +83,7 @@
                             <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                         </div>
                         <a class="text-center btn rounded-circle shadow login_btn" id="submit" onclick="validate()">
-                            <i class=" material-icons" style="margin-top:5px;" >keyboard_arrow_right</i>
+                            <i class=" material-icons" style="margin-top:5px; color: white;" >keyboard_arrow_right</i>
                         </a>
                     </form>
                 </div>
@@ -92,15 +92,16 @@
         </div>
     </div>
     <a class="carousel-control-prev" style="color:#56bac8" href="#carouselExampleControls" role="button" data-slide="prev">
-        <h4 style="color:#56bac8" aria-hidden="true">
-            <i class="material-icons" style="font-size: 64px;"> keyboard_arrow_left</i>
-        </h4>
+        <h3  class="text-center btn rounded-circle shadow login_btn" aria-hidden="true">
+                <i class=" material-icons" style="margin-top:5px; color: white;" >keyboard_arrow_left</i>
+        </h3>
         <span class="sr-only" style="color:#56bac8">Previous</span>
     </a>
     <a class="carousel-control-next" style="color:#56bac8" href="#carouselExampleControls" role="button" data-slide="next">
-        <h4 style="color:#56bac8" aria-hidden="true">
-            <i class="material-icons" style="font-size: 64px;"> keyboard_arrow_right</i>
-        </h4>
+        <h3 class="text-center btn rounded-circle shadow login_btn" aria-hidden="true">
+
+                <i class=" material-icons" style="margin-top:5px; color: white;" >keyboard_arrow_right</i>
+        </h3>
         <span class="sr-only" style="color:#56bac8">Next</span>
     </a>
 </div>
