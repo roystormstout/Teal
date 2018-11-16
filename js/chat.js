@@ -81,3 +81,56 @@ function sendText(event) {
     }, 1000);
 
 }
+
+
+
+$(".add_task").click(confirmDate);
+
+
+function confirmDate(event){
+    var date_str = $(this).attr("data-date");
+    var time_str = $(this).attr("data-time");
+    var node = $('<li></li>');
+    node.attr('data-toggle',"modal").attr("data-target","#exampleModal").attr("data-pass","Upcoming Session")
+        .attr("data-type", "Appointment").attr("data-date",date_str+", 2018, "+time_str)
+        .attr("data-description","Regular session with Dr.Dow.");
+    node.addClass("vis").addClass("rounded_large").addClass("list-group-item").addClass("row").addClass("ongoing")
+        .addClass("task").addClass("card").addClass("flex-md-row").addClass("mb-3").addClass("shadow-sm");
+    var child = $('<div></div>');
+    child.addClass("d-flex").addClass("w-100").addClass("p-2").addClass("d-flex").addClass("flex-column");
+    var header = $('<h6></h6>');
+    header.text("Appointment");
+    var date = $('<h5></h5>').addClass("mb-1");
+    date.text(date_str+", 2018");
+    var time = $('<p></p>');
+    time.text(time_str);
+    child.append(header);
+    child.append(date);
+    child.append(time);
+    node.append(child);
+    $('#taskList').append(node);
+
+    var resp_secondChild = $('<img>').addClass("rounded-circle");
+    resp_secondChild.attr('src', "../resource/threapist.jpg").attr('height',32).attr('width',32).attr('alt',"user");
+    var resp_node = $('<div></div>');
+    resp_node.addClass("message").addClass("container").addClass("doc");
+    var resp_box = $('<div></div>');
+    resp_box.addClass("container").addClass("rounded").addClass("shadow-sm").addClass("msg_box");
+    var resp_child = $('<span></span>');
+    resp_child.text('See you then!');
+    resp_box.append(resp_child);
+    resp_node.append(resp_secondChild);
+    resp_node.append(resp_box);
+    $('#chatBox').append(resp_node);
+    $(this).hide();
+    localStorage.setItem(date_str+time_str,"true");
+
+}
+
+$(".add_task").each(function(event) {
+    var date_str = $(this).attr("data-date");
+    var time_str = $(this).attr("data-time");
+    if(localStorage.getItem(date_str+time_str) == "true"){
+        confirmDate.call(this,event)
+    }
+});

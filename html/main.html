@@ -12,44 +12,102 @@
     <script src="../js/jquery-3.3.1.min.js"></script>
     <script src="../js/bootstrap.bundle.min.js"></script>
     <link href="../css/chat.css" rel="stylesheet"/>
+    <link href="../css/toggle.css" rel="stylesheet"/>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
 
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Date', 'Mood'],
+                ['11/09',  70],
+                ['11/10',  62],
+                ['11/11',  50],
+                ['11/12',  43],
+                ['11/13',  41],
+                ['11/14',  46],
+                ['11/15',  36]
+            ]);
+
+            var options = {
+                curveType: 'function',
+                legend: { position: 'bottom' },
+                vAxis: {label: 'mood', maxValue: 100, minValue: 0},
+                hAxis: { maxValue: '11/16'}
+            };
+
+            var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+            chart.draw(data, options);
+        }
+    </script>
 </head>
 <body>
 
 <div id="main">
-<header class="animated fadeInDown bg-white py-2 flex-nowrap justify-content-between align-items-center row">
-    <div class="col-sm-5" style="margin-left: 3vw"><h2 style="color:#56bac8; font-weight: bolder;">Teal</h2></div>
+    <div class=" collapse dropdown-menu-right float_profile no-transition shadow rounded bg-light mr-3"  id="collapseExample2">
+        <div>
+            <h6 class="dropdown-header" style="color: black; font-size: medium">Allen Who</h6>
+            <span class="dropdown-header" style="padding-bottom: 0;padding-top: 2px; font-size: smaller"> hututu123@gmail.com</span>
+        </div>
+        <div class="dropdown-divider bg-white"></div>
+        <div class="bg-white rounded">
+            <h6 class="dropdown-header" style="color: black; font-size: medium">Synchronization</h6>
+        <div class="dropdown-item pr-1" style="font-size: small">
+            Wearable Device
+            <label  class="switch align-middle">
+            <input id="wearableSwitch" type="checkbox">
+            <span class="slider round"></span>
+        </label>
+        </div>
+            <div class="dropdown-item pr-1" style="font-size: small">
+                Social Media
+                <label  class="switch align-middle">
+                    <input id="socialSwitch" type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </div>
+        <div class="dropdown-divider bg-white"></div>
+        <div class="bg-white rounded">
+            <h6 class="dropdown-header" style="color: black; font-size: medium">User Account</h6>
+            <a class="dropdown-item pr-1" style="font-size: small" href="../index.html"> Logout</a>
+        </div>
+
+    </div>
+<div class="animated fadeInDown bg-white py-2 flex-nowrap justify-content-between align-items-center row" style="z-index: 100 !important;">
+    <div class="col-sm-5" style="margin-left: 3vw"><h2 style="color:#56bac8; font-weight: bold;">Teal</h2></div>
     <div class="col-sm-5 " style="text-align: right;margin-right: 3vw;">
-        <span>Hi, Allen!</span>
-        <div class="btn">
+        <span>Hello, Allen!</span>
+        <div class="btn mr-5"  data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
             <!--<i class="fa fa-user"></i>-->
             <img class="rounded-circle" alt="prfile_pic" height="36" width="36" src="../resource/allen_profile.jpg"/>
         </div>
-    </div>
-    </header>
 
+    </div>
+
+    </div>
 <div class=" row justify-content-around" style="margin-top: 5vh">
     <!--USE MODAL-->
-    <div class="taskList col-sm-4">
+    <div class="taskList col-sm-4" style="z-index: 0 !important;">
         <div id="new_alert" class="alert alert-primary" role="alert">
             Updated! A new session is found and added.
         </div>
         <div id="no_alert" class="alert alert-secondary" role="alert">
             Your calender is up-to-date.
         </div>
-            <ul  class="list-group mb-3">
-                <li class=" row flex-md-row mb-4">
-                    <div class="d-flex w-100 justify-content-around ">
-                        <button class="btn btn-lg same_back inactive_btn" id="ongoing">Upcoming </button>
-                        <button class="btn btn-lg same_back" id="completed">Past</button>
-                    </div>
-                </li>
+        <div class="d-flex w-100 justify-content-around ">
+            <button class="btn btn-lg same_back inactive_btn" id="ongoing">Upcoming </button>
+            <button class="btn btn-lg same_back" id="completed">Past</button>
+        </div>
+            <ul  class="list-group mb-3 p-3" id="taskList" style="max-height: 70vh;overflow: scroll;">
                 <li data-toggle="modal" data-target="#exampleModal" data-pass="Upcoming Session" data-type="Appointment"
-                    data-date="November 10, 2018, 13:00pm" data-description="Regular session with Dr.Dow."
-                    class="vis rounded list-group-item row ongoing task card flex-md-row mb-3 shadow-sm upcoming">
+                    data-date="November 17, 2018, 13:00pm" data-description="Regular session with Dr.Dow."
+                    class="vis rounded_large list-group-item row ongoing task card flex-md-row mb-3 shadow-sm upcoming">
                     <div class=" d-flex w-100  p-2  d-flex flex-column ">
                         <h6>Appointment</h6>
-                        <h5 class="mb-1">November 10, 2018</h5>
+                        <h5 class="mb-1">November 17, 2018</h5>
                         <p>13:00pm</p>
                         <!--<button class="ongoing finishbtn"> complete </button>-->
                         <!--<button class="completed finishbtn"> undo </button>-->
@@ -58,7 +116,7 @@
                 <li data-toggle="modal" data-target="#exampleModal" data-pass="Upcoming Session" data-type="Stress Relief Session"
                     data-date="November 19, 2018, 15:00pm"
                     data-description="Come to the office to learn some methods for relieving your stress."
-                    class="vis rounded list-group-item row ongoing task card flex-md-row mb-3 shadow-sm">
+                    class="vis rounded_large list-group-item row ongoing task card flex-md-row mb-3 shadow-sm">
                     <div class="d-flex w-100 p-2 d-flex flex-column ">
                         <h6>Stress Relief Session</h6>
                         <h5 class="mb-1">November 19, 2018</h5>
@@ -67,22 +125,22 @@
                         <!--<button class="completed finishbtn"> undo </button>-->
                     </div>
                 </li>
-                <li data-toggle="modal" data-target="#exampleModal" data-pass="Upcoming Session"
-                    data-date="December 4, 2018, 17:00pm" data-type="Online Chatting"
-                    data-description="Quick online chatting session. Feedback on the new stress relief methods."
-                    class="rounded list-group-item row ongoing task card flex-md-row mb-2 shadow-sm " id="new_task">
-                    <div class="d-flex w-100 p-2  d-flex flex-column ">
-                        <h6>Online Chatting</h6>
-                        <h5 class="mb-1">December 4, 2018</h5>
-                        <p>17:00pm</p>
-                        <!--<button class="ongoing finishbtn"> complete </button>-->
-                        <!--<button class="completed finishbtn"> undo </button>-->
-                    </div>
-                </li>
+                <!--<li data-toggle="modal" data-target="#exampleModal" data-pass="Upcoming Session"-->
+                    <!--data-date="December 4, 2018, 17:00pm" data-type="Online Chatting"-->
+                    <!--data-description="Quick online chatting session. Feedback on the new stress relief methods."-->
+                    <!--class="rounded_large list-group-item row ongoing task card flex-md-row mb-2 shadow-sm " id="new_task">-->
+                    <!--<div class="d-flex w-100 p-2  d-flex flex-column ">-->
+                        <!--<h6>Online Chatting</h6>-->
+                        <!--<h5 class="mb-1">December 4, 2018</h5>-->
+                        <!--<p>17:00pm</p>-->
+                        <!--&lt;!&ndash;<button class="ongoing finishbtn"> complete </button>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<button class="completed finishbtn"> undo </button>&ndash;&gt;-->
+                    <!--</div>-->
+                <!--</li>-->
                 <li data-toggle="modal" data-target="#exampleModal" data-pass="Past Session"
                     data-date="November 2, 2018, 13:00pm" data-type="Online Chatting"
                     data-description="Allen is doing better everyday. Glad to know that he becomes more productive at work."
-                    class=" rounded list-group-item row completed task card flex-md-row mb-3 shadow-sm h-md-250 gray_back">
+                    class=" rounded_large list-group-item row completed task card flex-md-row mb-3 shadow-sm h-md-250 gray_back">
                     <div class="d-flex w-100 justify-content-between p-2 d-flex flex-column align-items-start">
                         <h6>Online Chatting</h6>
                         <h5 class="mb-1">November 2, 2018</h5>
@@ -92,15 +150,15 @@
                     </div>
                 </li>
             </ul>
-        <div class="d-flex rounded-circle justify-content-around ongoing ">
-            <button class="btn rounded-circle add_btn shadow" id="refresh-btn">
-                <i class="material-icons" style="margin-top:5px;">refresh</i>
-            </button>
-        </div>
+        <!--<div class="d-flex rounded-circle justify-content-around ongoing ">-->
+            <!--<button class="btn rounded-circle add_btn shadow" id="refresh-btn">-->
+                <!--<i class="material-icons" style="margin-top:5px;">refresh</i>-->
+            <!--</button>-->
+        <!--</div>-->
         </div>
     <div class="mentalManage col-sm-6">
-        <div  class="jumbotron bg-white shadow-sm" style="padding: 2rem 1rem;">
-        <div class="d-flex w-100 justify-content-start mb-2">
+        <div  class="jumbotron bg-white shadow-sm mb-3" style="padding: 0.5rem 2rem;">
+        <div class="d-flex w-100 justify-content-start mb-1">
         <h5>Feel free to take a break. </h5>
            <button class="btn pt-0"
               data-toggle="popover"
@@ -130,24 +188,24 @@
                 </div>
             </div>
         </div>
-        <div class="jumbotron bg-white shadow-sm "  style="padding: 2rem 1rem;">
+        <div class="jumbotron bg-white shadow-sm "  style="padding: 0.5rem 2rem;">
             <div class=" w-100 mb-2">
             <h4>Weekly Trend</h4>
             <small style="color: gray;"><span style="color: greenyellow;"> -12% </span> comparing to last week.</small>
             <small style="color: gray;">Keep :)ing.</small>
             </div>
             <figure class="figure">
-                <img src="../resource/mental_chart.jpg" height="248" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                <div id="curve_chart" style="width: 46vw; height: 38vh"></div>
+                <!--<img src="../resource/mental_chart.jpg" height="248" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">-->
             </figure>
         </div>
 
     </div>
-    <!--TODO: USE COLLAPSE-->
         <a  data-toggle="collapse" role="button" aria-expanded="false"
             aria-controls="collapseExample" class="float rounded-circle add_btn btn " href="#collapseExample" id="chat_btn">
             <i class="my-float material-icons">chat</i>
         </a>
-    <div class="collapse float_chat shadow rounded" id="collapseExample" >
+    <div class="collapse float_chat shadow rounded no-transition" id="collapseExample" >
         <header class="p-2 rounded-top" style="background-color: #8fdee5; color:white; text-align: right;">
             <i class="material-icons"> phone </i>
             <i class="material-icons"> videocam </i>
@@ -164,6 +222,17 @@
                     <img src="../resource/threapist.jpg" class="rounded-circle" height="32" width="32" alt="therapist_pic"/>
                     <div class="container msg_box rounded shadow-sm ">
                         <span>We can schedule an appointment to discuss about your feelings! Let me know your availability and I can put you on the calendar. :D</span>
+                    </div>
+                </div>
+                <div class="container message doc">
+                    <img src="../resource/threapist.jpg" class="rounded-circle" height="32" width="32" alt="therapist_pic"/>
+                    <div class="container msg_box rounded shadow-sm ">
+                        <span>Please select a date:</span>
+                        <div class="align-content-center align-self-center">
+                            <button class="btn bg-white m-1 rounded_large shadow-sm add_task" data-date="November 24" data-time="15:30pm">Nov 24 15:30pm</button>
+                            <button class="btn bg-white m-1 rounded_large shadow-sm add_task" data-date="November 25" data-time="12:00pm">Nov 25 12:00pm</button>
+                            <button class="btn bg-white m-1 rounded_large shadow-sm add_task" data-date="November 29" data-time="16:00pm">Nov 29 16:00pm</button>
+                        </div>
                     </div>
                 </div>
             </div>

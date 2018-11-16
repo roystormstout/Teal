@@ -36,7 +36,7 @@
     height:60px;
     bottom:40px;
     right:40px;
-    background-color:#0C9;
+    background-color:#56bac8;
     color:#FFF;
     border-radius:50px;
     text-align:center;
@@ -54,4 +54,23 @@
 }
 .my-float{
     margin-top:11px;
+}
+
+.rounded_large{
+    border-radius: 1rem!important;
+}
+
+
+.float_profile {
+    position:fixed;
+    z-index: 10000 !important;
+    top:10vh;
+    right:50px;
+    background-color: white;
+}
+
+.collapsing {
+    -webkit-transition: none;
+    transition: none;
+    display: none;
 }
