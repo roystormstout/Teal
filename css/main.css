@@ -65,7 +65,7 @@
     position:fixed;
     z-index: 10000 !important;
     top:10vh;
-    right:50px;
+    right:10vw;
     background-color: white;
 }
 
