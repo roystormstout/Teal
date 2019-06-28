@@ -1,3 +1,4 @@
 # Teal
 
-CSE 170 Project to help connecting therapists and patients.
+CSE 170 Human-Computer Interaction
+Web Application to help managing stress, and connecting therapists and patients.
