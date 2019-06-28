@@ -32,13 +32,8 @@ function checkitem()                        // check function
 function validate(){
     var username = document.getElementById("exampleInputEmail1").value;
     var password = document.getElementById("exampleInputPassword1").value;
-    if ( username == "hututu123@gmail.com" && password == "123"){
-        window.location = "html/main.html"; // Redirecting to other page.
-        return false;
-    } else {
-        alert ("wrong email/password combination.");
-        return false;
-    }
+    window.location = "html/main.html"; // Redirecting to other page.
+    return false;
 }
 
 $(document).keypress(function(e) {
